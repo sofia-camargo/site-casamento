@@ -15,7 +15,7 @@ body {
     height: 100vh; 
     width: 100vw;
     
-    background-image: url('src/fundo_lavanda.png'); 
+    background-image: url('../fundo_lavanda.jpeg');
     background-size: cover; 
     background-position: center; 
     
