@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    
+    <link rel="icon" href="src/logo.jpeg" type="image/jpeg">
     <link rel="stylesheet" href="src/style/header.css"> 
     <link rel="stylesheet" href="src/style/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -20,7 +20,11 @@
                 <img src="src/logo.jpeg" alt="Logotipo do local da cerimônia e nome Jiúlia e Vinícius">
             </a>
             
-            <ul id="mobile_nav_list">
+            <button id="menu-toggle" aria-controls="navigation-menu" aria-expanded="false">
+                ☰ 
+            </button>
+            
+            <ul id="navigation-menu" data-visible="false">
                 <li id= "home" class="nav_item"><a href="#home">HOME</a></li>
                 <li class="nav_item"><a href="#toRSVP">CONFIRMAR PRESENÇA</a></li>
                 <li class="nav_item"><a href="#attendanceList">LISTA DE PRESENTES</a></li>
@@ -48,14 +52,15 @@
                     </p> 
                 </div>
             </div>
+            <div class="lavanda">
+                <img src="src/lavanda.png" alt="Desenhos decorativos de lavanda">
+                <img src="src/lavanda.png" alt="Desenhos decorativos de lavanda">
+            </div>
+            
         </section>
 
     </main>
 
-    <footer class="footer">
-        <img class="decoracao-lavanda" src="src/lavanda.png" alt="Desenho de lavanda decorativa">
-        <img class="decoracao-lavanda" src="src/lavanda.png" alt="Desenho de lavanda decorativa">
-    </footer>
-
+    <script src="src/JavaScript/script.js" defer></script>
 </body>
 </html>

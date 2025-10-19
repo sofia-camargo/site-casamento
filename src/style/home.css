@@ -4,6 +4,7 @@
     box-sizing: border-box;
     background-color: #fff6ea; 
 }
+
 .apresentacao-casal{
     display: flex; 
     align-items: flex-start; 
@@ -12,39 +13,106 @@
     gap: 20px;
 }
 
-.foto-casal img{
-    max-width: 100%;
-    height: 580px;
-    margin: 15px;
-    display: flex;
-    padding: 10px 10px;
-    margin: 0 180px;
-}
-
 .mensagem-casal{
     font-family: "Arapey", serif;
     text-align: center;
     font-style: normal;
+    max-width: 100%;
 }
 
-.boas-vindas{
-    font-size: 130%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.boas-vindas, .oracao {
+    color: #69615a;
+    text-transform: uppercase;
     display: flex; 
     justify-content: center;
     align-items: center;
-    color: #69615a;
-    padding: 10px 10px;
-    /*margin: 0 600px;*/
-    font-weight: 500; 
-    text-transform: uppercase;
-    width: 23.5rem;
-    box-shadow: #69615a;
+    margin-top: 20px;
+}
+.mensagem-fe img{
+    display: flex;
+    margin-left: -200px;
+
+}
+.boas-vindas {
+    font-size: 170%;
+    margin-bottom: 20px;
+}
+.oracao {
+    font-size: 130%;
+    display: flex;
+    margin-left: -250px;
 }
 
-.mensagem-fe img{
-    max-width: 100%;
-    height: 250px;
-    margin-left: -45px;
+.lavanda{
+    display:block;
+    
+}
+
+@media (min-width: 769px) { 
+    
+    .foto-casal img{
+        max-width: 100%;
+        height: 750px; 
+        margin: 0 200px; 
+        padding: 10px 10px;
+    }
+
+    .boas-vindas{
+        width: 30rem;
+        margin-left: -150px;
+    }
+
+    .oracao{
+        width: 27rem;
+        margin-left: -100px;
+    }
+    
+    .mensagem-fe img{
+        height: 270px;
+        margin-left: -40px;
+    }
+}
+
+@media (max-width: 768px){
+    
+    .apresentacao-casal {
+        flex-direction: column;
+        width: 90%; 
+        margin: 20px auto;
+        gap: 0;
+    }
+
+    .foto-casal {
+        width: 100%; 
+    }
+
+    .foto-casal img {
+        height: auto;
+        max-height: 500px; 
+        width: 90%; 
+        display: block;
+        margin: 0 auto;
+    }
+
+    .mensagem-casal {
+        padding: 0 10px;
+    }
+
+    .boas-vindas,
+    .oracao {
+        width: 100%; 
+        margin-left: 0;
+        text-align: center;
+        justify-content: center;
+        font-size: 130%;
+        padding: 0 10px;
+    }
+
+    .mensagem-fe img {
+        margin-left: 0;
+        height: auto; 
+        max-width: 100%; 
+        display: block;
+        margin: 15px auto;
+    }
 }

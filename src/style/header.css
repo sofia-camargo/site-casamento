@@ -39,12 +39,19 @@ header {
     
 }
 
-#mobile_nav_list {
+#menu-toggle {
+    display: none; 
+}
+
+#navigation-menu {
     list-style: none; 
     padding: 0;
     margin: 0 auto; 
     display: flex; 
     align-items: center;
+    list-style: none;
+    display: flex; 
+    gap: 20px;
 }
 
 .nav_item {
@@ -79,4 +86,57 @@ header {
 
 .nav_item a:visited {
     color: #69615a; 
+}
+
+@media (max-width: 768px) {
+    
+    /* 1. MOSTRAR O BOTÃO HAMBÚRGUER */
+    #menu-toggle {
+        display: block; /* O torna visível no mobile */
+        position: absolute; 
+        right: 1.5rem;
+        top: 1.5rem;
+        z-index: 999; 
+        background: none;
+        border: none;
+        font-size: 2.5rem; /* Tamanho do ícone */
+        cursor: pointer;
+        color: #69615a; /* Use a cor do seu tema */
+        padding: 5px;
+    }
+
+    /* 2. ESCONDER E POSICIONAR O MENU */
+    #navigation-menu {
+        /* Configuração do menu lateral */
+        position: fixed; 
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 70%; /* Ocupa 70% da tela */
+        background-color: #69615a; /* Fundo que contrasta com o corpo */
+        color: white;
+        padding: 5rem 2rem;
+        z-index: 998;
+        
+        /* Torna a lista vertical */
+        flex-direction: column; 
+        gap: 2rem;
+
+        /* O TRUQUE PARA ESCONDER: move o menu para fora da tela (100% à direita) */
+        transform: translateX(100%); 
+        transition: transform 350ms ease-out; /* Animação suave */
+    }
+
+    /* Estilos dos links no menu mobile */
+    #navigation-menu a {
+        color: white;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+    
+    /* 3. A CLASSE MÁGICA: MOSTRAR O MENU */
+    /* Quando o JS adiciona data-visible="true", ele volta para a posição 0 */
+    #navigation-menu[data-visible="true"] {
+        transform: translateX(0%); 
+    }
 }
