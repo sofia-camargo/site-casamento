@@ -1,11 +1,10 @@
 # 💍 Site de Casamento de Jiúlia & Vinícius
 Bem-vindos ao repositório do site de casamento! Este projeto está sendo desenvolvido para compartilhar todos os detalhes sobre o grande dia do casal.
 ## 🌟 O Objetivo do Projeto
-O site é o ponto central para todos os convidados. Ele foi criado com o objetivo de:
+O site é o ponto central para todos os convidados, para fim de que todos tenham acesso rápido e prático a tudo que precisam saber sobre o dia da cerimônia, como:
 * **Confirmar Presença (RSVP):** Facilitar a confirmação dos convidados para uma melhor organização.
 * **Informações Essenciais:** Detalhar a data, horário, localização da cerimônia e da recepção.
 * **Lista de Presentes:** Apresentar as opções de presentes.
-É uma forma de garantir que todos os convidados tenham acesso rápido e fácil a tudo o que precisam saber.
 
 ## 💻 Tecnologias Utilizadas
 Este site é um projeto estático e foi desenvolvido com as seguintes ferramentas:
@@ -22,3 +21,8 @@ O site inclui as seguintes páginas e recursos:
 
 ## 📧 Contato
 Para dúvidas ou sugestões:
+<div> 
+    <a href = "mailto:sofiacamargonunes01@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+    <a href="https://www.linkedin.com/in/sofia-camargo-nunes-a64185304/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+  <a href="https://github.com/sofia-camargo"<img alt="GitHub Discussions" target="_blank"><img src="![GitHub Discussions](https://img.shields.io/github/discussions/:user/:repo)"></a>
+</div>
