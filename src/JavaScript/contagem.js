@@ -1,7 +1,7 @@
 function contagemRegressiva() {
     // Atenção: No objeto Date do JavaScript, os meses são de 0 (Janeiro) a 11 (Dezembro).
     // Outubro é o mês 9 (o décimo mês).
-    const dataFinal = new Date(2027, 9, 8, 0, 0, 0); 
+    const dataFinal = new Date(2027, 9, 8, 16, 0, 0); 
     const dataFinalEmMs = dataFinal.getTime(); // Data final em milissegundos
 
     // Variável para armazenar o intervalo, definida aqui para que a função atualizarContagem possa acessá-la.
@@ -59,10 +59,8 @@ function contagemRegressiva() {
         if (elementoSegundos) elementoSegundos.textContent = formatarTempo(segundos);
     };
 
-    // Inicia a contagem (executa a função a cada 1 segundo)
     intervalo = setInterval(atualizarContagem, 1000);
 
-    // Executa a função uma vez imediatamente para evitar o atraso de 1 segundo na primeira atualização
     atualizarContagem();
 }
 

@@ -29,20 +29,20 @@ body {
 }
 
 .nomes-noivos {
-    font-size: 8vw; 
+    font-size: 9vw; 
     font-family: "Great Vibes", cursive;
     font-weight: normal;
     margin-top: 20vh; 
     margin-bottom: 0.5rem;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); 
+    text-shadow: 3px 1px 5px rgba(0, 0, 0, 1); 
 }
 
 .data {
-    font-size: 1.5vw; 
+    font-size: 1.7vw; 
     font-family: "Playfair Display", serif;
     letter-spacing: 0.1rem; 
     margin-bottom: 25px; 
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    text-shadow: 3px 1px 5px rgba(0, 0, 0, 1); 
 }
 
 .button-clickhere {
@@ -50,7 +50,7 @@ body {
     color: #faf1e1; 
     font-family: "Playfair Display", serif;
     font-size: 1.5rem;
-    margin-top: 70px;
+    margin-top: 30px;
     border: 1px solid #faf1e1;
     padding: 10px 22px; 
     display: inline-block; 
