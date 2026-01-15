@@ -1,5 +1,7 @@
 # 💍 Site de Casamento de Jiúlia & Vinícius
-Bem-vindos ao repositório do site de casamento! Este projeto está sendo desenvolvido para compartilhar todos os detalhes sobre o grande dia do casal.
+![Static Badge](https://img.shields.io/badge/Status%20do%20Projeto-10%25-orange)
+
+Bem-vindos ao repositório do site de casamento que estou desenvolvendo para um casal muito querido! Este projeto está sendo desenvolvido para compartilhar todos os detalhes sobre o grande dia.
 ## 🌟 O Objetivo do Projeto
 O site é o ponto central para todos os convidados, para fim de que todos tenham acesso rápido e prático a tudo que precisam saber sobre o dia da cerimônia, como:
 * **Confirmar Presença (RSVP):** Facilitar a confirmação dos convidados para uma melhor organização.
