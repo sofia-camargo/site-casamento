@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 * {
     margin: 0;
@@ -81,7 +81,7 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
     border: 1.5px solid #faf1e1; 
     border-radius: 10px; /* Bordas arredondadas*/
-    padding: 20px;
+    /*padding: 20px;
     margin: 20px auto; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #faf1e1;
@@ -124,7 +124,7 @@ body {
 
 
 @media (max-width: 600px) { /*ajustando para celular*/
-
+/*
     .header-container {
         justify-content: flex-start;
         padding-top: 5vh; 

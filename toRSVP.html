@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="src/logo.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="src/style/header.css"> 
+    <link rel="stylesheet" href="src/style/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+
+<body> 
+    <header> 
+        <nav id="navbar">                        
+            <ul id="navigation-menu" data-visible="false">
+                <li id= "home" class="nav_item"><a href="#home">HOME</a></li>
+                <li class="nav_item"><a href="toRSVP.html">CONFIRMAR PRESENÇA</a></li>
+                <li class="nav_item"><a href="#attendanceList">LISTA DE PRESENTES</a></li>
+                <li class="nav_item"><a href="#localizacao">LOCALIZAÇÃO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo-principal">
+        <h4 >CONFIRME SUA PRESENÇA!</h4>
+        <h4 >ATENÇÃO! A CONFIRMAÇÃO É INDIVIDUAL!</h4>
+        
+        <form action="/enviar" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(19)99999-9999">
+            <button type="submit">Confirmar Presença</button>
+        </form>
+
+        <section class="informacoes-casamento">
+            <p><strong>Data:</strong> 08 de outubro de 2027 às 16h30min</p>
+            <p><strong>CAPELA MONTE ALEGRE</strong></p>
+            <p> Av. Comendador Pedro Morgani, s/n</p>
+            <p> Monte Alegre, Piracicaba - SP</p>
+            <p><strong>Recepção após a cerimônia:</strong> Casa Lucca</p>
+            <p>Praça Antônio Keller, 22 - Monte Alegre, Piracicaba/SP</p>
+        </section>
+
+    </main>
+</body>
+</html>

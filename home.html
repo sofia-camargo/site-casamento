@@ -15,19 +15,11 @@
 
 <body> 
     <header> 
-        <nav id="navbar">
-            <a href="#inicio" id="logo"> 
-                <img src="src/logo.jpeg" alt="Logotipo do local da cerimônia e nome Jiúlia e Vinícius">
-            </a>
-            
-            <button id="menu-toggle" aria-controls="navigation-menu" aria-expanded="false">
-                ☰ 
-            </button>
-            
+        <nav id="navbar">                        
             <ul id="navigation-menu" data-visible="false">
                 <li id= "home" class="nav_item"><a href="#home">HOME</a></li>
-                <li class="nav_item"><a href="#toRSVP">CONFIRMAR PRESENÇA</a></li>
-                <li class="nav_item"><a href="#attendanceList">LISTA DE PRESENTES</a></li>
+                <li class="nav_item"><a href="toRSVP.html">CONFIRMAR PRESENÇA</a></li>
+                <li class="nav_item"><a href="attendanceList.html">LISTA DE PRESENTES</a></li>
                 <li class="nav_item"><a href="#localizacao">LOCALIZAÇÃO</a></li>
             </ul>
         </nav>
@@ -36,31 +28,41 @@
     <main class="conteudo-principal">
         
         <section class="apresentacao-casal">
-            <div class="foto-casal">
-                <img src="src/casal.jpeg" alt="Foto do casal, Jiúlia e Vinícius, sorrindo">
-            </div>
-
-            <div class="mensagem-casal">
-                <p class="boas-vindas">
-                    "Queridos familiares e amigos, sejam bem-vindos ao nosso site de casamento. 
-                    A presença de vocês é a nossa maior alegria, e estamos ansiosos para compartilhar este momento único".
-                </p>
-                <div class="mensagem-fe">
-                    <img src="src/santos.png" alt="Imagem da Sagrada Família, composta por José, Maria e o Menino Jesus">
-                    <p class="oracao">
-                        "Que a Sagrada Família abençoe nosso matrimônio e seja o alicerce do nosso lar."
-                    </p> 
-                </div>
-            </div>
-            <div class="lavanda">
-                <img src="src/lavanda.png" alt="Desenhos decorativos de lavanda">
-                <img src="src/lavanda.png" alt="Desenhos decorativos de lavanda">
-            </div>
-            
+            <h1 class="titulo-casal">Jiúlia & Vinícius</h1>
+            <h4 class="data-casamento">08 de Outubro de 2027</h4>
         </section>
 
-    </main>
+        <section class="contagem-regressiva">
+            <h6>A aproximação do nosso grande dia</h6>
+            <div id="countdown" class="contador-estilo">
+            <div class="unidade-tempo">
+                <span id="dias" class="numero-tempo"></span>
+                <span class="descricao-tempo">Dias</span>
+            </div>
+            <div class="unidade-tempo">
+                <span id="horas" class="numero-tempo"></span>
+                <span class="descricao-tempo">Horas</span>
+            </div>
+        
+            <div class="unidade-tempo">
+                <span id="minutos" class="numero-tempo"></span>
+                <span class="descricao-tempo">Minutos</span>
+            </div>
+        
+            <div class="unidade-tempo">
+                <span id="segundos" class="numero-tempo"></span>
+                <span class="descricao-tempo">Segundos</span>
+            </div>
+        </section>
+
+        <section class="introducao-casal">
+            <img src="src/casal.jpeg" alt="Foto do casal, Jiúlia e Vinícius, sorrindo">
+            <p class="introducao-texto">
+                "Queridos familiares e amigos, sejam bem-vindos ao nosso site de casamento. 
+                A presença de vocês é a nossa maior alegria, e estamos ansiosos para compartilhar este momento único".
+        </section>
 
     <script src="src/JavaScript/script.js" defer></script>
+    <script src="src/JavaScript/contagem.js"></script>
 </body>
 </html>

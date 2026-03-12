@@ -1,0 +1,66 @@
+body{
+    font-family: 'Georgia', serif;
+    background-color: #e6dfcf;
+    margin:0;
+}
+
+.lista-presentes{
+    text-align:center;
+    padding:40px;
+}
+
+h1{
+    letter-spacing:3px;
+    margin-bottom:40px;
+}
+
+#produtos{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:30px;
+    width:80%;
+    margin:auto;
+}
+
+.produto{
+    border:1px solid #999;
+    padding:20px;
+    background:#f4f1e8;
+}
+
+.produto img{
+    width:100%;
+    height:200px;
+    object-fit:contain;
+}
+
+.produto h3{
+    font-size:16px;
+}
+
+.preco{
+    font-size:20px;
+    margin:10px 0;
+}
+
+button{
+    padding:8px 20px;
+    border:1px solid #444;
+    background:transparent;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#444;
+    color:white;
+}
+
+.comprado{
+    opacity:0.5;
+}
+
+.comprado button{
+    background:#999;
+    color:white;
+    cursor:not-allowed;
+}
