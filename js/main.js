@@ -1,50 +1,70 @@
+/* ============================================
+   JIÚLIA & VINÍCIUS — MAIN JAVASCRIPT
+   Countdown (Vue.js), RSVP & PIX Modal
+   ============================================ */
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Target date: October 8, 2027 at 16:30:00
-  const targetDate = new Date('2027-10-08T16:30:00').getTime();
 
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const difference = targetDate - now;
+  // ========== VUE.JS COUNTDOWN ==========
+  if (window.Vue && document.getElementById('countdown-app')) {
+    const { createApp, ref, onMounted, onUnmounted } = Vue;
 
-    if (difference < 0) {
-      document.querySelectorAll('.countdown-number, .landing-countdown-num, .cd-number').forEach(el => {
-        el.innerText = '0';
-      });
-      return;
-    }
+    createApp({
+      setup() {
+        // Data e horário exato do casamento: 08/10/2027 às 16:30:00
+        const targetDate = new Date('2027-10-08T16:30:00').getTime();
+        const days = ref(0);
+        const hours = ref('00');
+        const minutes = ref('00');
+        const seconds = ref('00');
+        let timer = null;
 
-    const days    = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours   = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        const updateCountdown = () => {
+          const now = new Date().getTime();
+          const difference = targetDate - now;
 
-    // Landing page
-    const lDias    = document.getElementById('landing-dias');
-    const lHoras   = document.getElementById('landing-horas');
-    const lMinutos = document.getElementById('landing-minutos');
-    const lSeg     = document.getElementById('landing-segundos');
-    if (lDias)    lDias.innerText    = days;
-    if (lHoras)   lHoras.innerText   = String(hours).padStart(2, '0');
-    if (lMinutos) lMinutos.innerText = String(minutes).padStart(2, '0');
-    if (lSeg)     lSeg.innerText     = String(seconds).padStart(2, '0');
+          if (difference <= 0) {
+            days.value = 0;
+            hours.value = '00';
+            minutes.value = '00';
+            seconds.value = '00';
+            if (timer) clearInterval(timer);
+            return;
+          }
 
-    // Home page
-    const hDias    = document.getElementById('home-dias');
-    const hHoras   = document.getElementById('home-horas');
-    const hMinutos = document.getElementById('home-minutos');
-    const hSeg     = document.getElementById('home-segundos');
-    if (hDias)    hDias.innerText    = days;
-    if (hHoras)   hHoras.innerText   = String(hours).padStart(2, '0');
-    if (hMinutos) hMinutos.innerText = String(minutes).padStart(2, '0');
-    if (hSeg)     hSeg.innerText     = String(seconds).padStart(2, '0');
+          days.value = Math.floor(difference / (1000 * 60 * 60 * 24));
+          const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+          const s = Math.floor((difference % (1000 * 60)) / 1000);
+
+          hours.value = String(h).padStart(2, '0');
+          minutes.value = String(m).padStart(2, '0');
+          seconds.value = String(s).padStart(2, '0');
+        };
+
+        onMounted(() => {
+          updateCountdown();
+          timer = setInterval(updateCountdown, 1000);
+        });
+
+        onUnmounted(() => {
+          if (timer) clearInterval(timer);
+        });
+
+        return {
+          days,
+          hours,
+          minutes,
+          seconds
+        };
+      }
+    }).mount('#countdown-app');
   }
 
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-
-  // RSVP
+  // ========== RSVP FORM HANDLING ==========
   const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbzHluN51yfHZfh4esp4VN1Zws97uK3kKd5sBdrXSNnLD48La8kUFyECdPawJV3kTRvX/exec';
   const rsvpForm = document.getElementById('form-rsvp');
+
   if (rsvpForm) {
     rsvpForm.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -55,25 +75,33 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.disabled = true;
 
       const payload = {
-        nome:           formData.get('nome') || '',
-        telefone:       formData.get('telefone') || '',
-        presenca:       formData.get('presenca') || 'Confirmada',
-        data_registro:  new Date().toLocaleString('pt-BR')
+        nome: formData.get('nome') || '',
+        telefone: formData.get('telefone') || '',
+        presenca: formData.get('presenca') || 'Confirmada',
+        data_registro: new Date().toLocaleString('pt-BR')
       };
 
       try {
+        // 1. Envio direto para o Google Apps Script (para planilhas)
         if (googleScriptUrl) {
           fetch(googleScriptUrl, {
             method: 'POST',
             mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
-          }).catch(() => {});
+          }).catch(err => console.log('Google Script fetch note:', err));
         }
-        fetch('api/rsvp.php', { method: 'POST', body: formData }).catch(() => {});
+
+        // 2. Envio para o backend PHP
+        fetch('api/rsvp.php', {
+          method: 'POST',
+          body: formData
+        }).catch(err => console.log('PHP backend note:', err));
+
         const msg = payload.presenca === 'Confirmada'
           ? 'Presença confirmada com sucesso! Aguardamos você com muito carinho. 💜'
           : 'Sua resposta foi registrada. Sentiremos sua falta!';
+
         showToast(msg);
         rsvpForm.reset();
       } catch (err) {
@@ -86,18 +114,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Scroll reveal
+  // ========== SCROLL REVEAL ANIMATIONS ==========
   revealElements();
 });
 
-// Toast
+// Toast notification
 function showToast(message) {
   const existing = document.querySelector('.toast-msg');
   if (existing) existing.remove();
+
   const toast = document.createElement('div');
   toast.className = 'toast-msg';
   toast.innerText = message;
   document.body.appendChild(toast);
+
   setTimeout(() => {
     toast.style.opacity = '0';
     toast.style.transition = 'opacity 0.5s ease';
@@ -105,10 +135,14 @@ function showToast(message) {
   }, 4000);
 }
 
-// Copy PIX Key
+// Copy PIX Key & Open Modal
 function copyPixKey(key, title) {
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(key).then(() => showPixModal(key, title)).catch(() => fallbackCopy(key, title));
+    navigator.clipboard.writeText(key).then(() => {
+      showPixModal(key, title);
+    }).catch(() => {
+      fallbackCopy(key, title);
+    });
   } else {
     fallbackCopy(key, title);
   }
@@ -118,8 +152,9 @@ function showPixModal(key, title) {
   const modal = document.getElementById('pix-modal');
   const modalTitle = document.getElementById('pix-modal-title');
   const modalKey = document.getElementById('pix-modal-key');
+
   if (modal) {
-    if (modalTitle) modalTitle.textContent = title;
+    if (modalTitle) modalTitle.textContent = title ? title.toUpperCase() : 'PRESENTE';
     if (modalKey) modalKey.textContent = key;
     modal.style.display = 'flex';
   } else {
@@ -143,7 +178,9 @@ function revealElements() {
   const windowHeight = window.innerHeight;
   reveals.forEach(el => {
     const top = el.getBoundingClientRect().top;
-    if (top < windowHeight - 50) el.classList.add('active');
+    if (top < windowHeight - 40) {
+      el.classList.add('active');
+    }
   });
 }
 

@@ -7,13 +7,15 @@
   <meta name="description" content="Site de casamento de Jiúlia e Vinícius. Confirme sua presença e celebre conosco dia 08 de Outubro de 2027.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Great+Vibes&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
+  <!-- Vue.js 3 Production CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 </head>
 <body id="top">
 
-  <!-- ========== NAV ========== -->
+  <!-- ========== NAV (RESPONSIVA: NO CELULAR LOGO EM CIMA, MENU EMBAIXO) ========== -->
   <nav class="main-nav" id="main-nav">
     <div class="nav-left">
       <a href="#home" class="nav-link">INÍCIO</a>
@@ -25,7 +27,7 @@
         <span class="monogram-sep">|</span>
         <span class="monogram-v">V</span>
       </div>
-      <img src="assets/images/divider_garland.jpg" alt="Raminhos" class="monogram-garland-img">
+      <img src="assets/images/divider_garland.jpg" alt="Raminhos de Lavanda" class="monogram-garland-img">
     </div>
     <div class="nav-right">
       <a href="#confirmar-presenca" class="nav-link">CONFIRME SUA PRESENÇA</a>
@@ -33,157 +35,130 @@
     </div>
   </nav>
 
-  <!-- ========== HERO ========== -->
+  <!-- ========== HERO SECTION (LARGURA TOTAL 100%) ========== -->
   <section class="hero-section" id="home">
-    <!-- Lavender botanicals -->
+    <!-- Raminhos minimalistas e delicados de lavanda nas laterais -->
     <div class="botanical-left">
-      <svg viewBox="0 0 80 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g opacity="0.7">
-          <line x1="40" y1="280" x2="40" y2="40" stroke="#9d8eb5" stroke-width="1.2"/>
-          <ellipse cx="40" cy="38" rx="3" ry="5" fill="#b8a9cc"/>
-          <!-- Left branch -->
-          <line x1="40" y1="220" x2="18" y2="190" stroke="#9d8eb5" stroke-width="1"/>
-          <ellipse cx="14" cy="186" rx="2.5" ry="4.5" fill="#c9bcd8" transform="rotate(-20 14 186)"/>
-          <ellipse cx="10" cy="178" rx="2" ry="3.5" fill="#c9bcd8" transform="rotate(-25 10 178)"/>
-          <ellipse cx="7" cy="170" rx="1.8" ry="3" fill="#c9bcd8" transform="rotate(-30 7 170)"/>
-          <!-- Right branch -->
-          <line x1="40" y1="200" x2="62" y2="170" stroke="#9d8eb5" stroke-width="1"/>
-          <ellipse cx="65" cy="166" rx="2.5" ry="4.5" fill="#c9bcd8" transform="rotate(20 65 166)"/>
-          <ellipse cx="69" cy="158" rx="2" ry="3.5" fill="#c9bcd8" transform="rotate(25 69 158)"/>
-          <!-- Left branch 2 -->
-          <line x1="40" y1="160" x2="15" y2="128" stroke="#9d8eb5" stroke-width="1"/>
-          <ellipse cx="11" cy="124" rx="2.5" ry="4.5" fill="#b8a9cc" transform="rotate(-20 11 124)"/>
-          <ellipse cx="7" cy="116" rx="2" ry="3.5" fill="#b8a9cc" transform="rotate(-25 7 116)"/>
-          <ellipse cx="4" cy="108" rx="1.8" ry="3" fill="#b8a9cc" transform="rotate(-30 4 108)"/>
-          <!-- Right branch 2 -->
-          <line x1="40" y1="130" x2="65" y2="100" stroke="#9d8eb5" stroke-width="1"/>
-          <ellipse cx="68" cy="96" rx="2.5" ry="4.5" fill="#b8a9cc" transform="rotate(20 68 96)"/>
-          <ellipse cx="72" cy="88" rx="2" ry="3.5" fill="#b8a9cc" transform="rotate(25 72 88)"/>
-          <!-- Top flowers -->
-          <ellipse cx="40" cy="80" rx="2.5" ry="4.5" fill="#9d8eb5" transform="rotate(-10 40 80)"/>
-          <ellipse cx="35" cy="70" rx="2" ry="4" fill="#9d8eb5" transform="rotate(-20 35 70)"/>
-          <ellipse cx="45" cy="65" rx="2" ry="4" fill="#9d8eb5" transform="rotate(15 45 65)"/>
-          <ellipse cx="40" cy="58" rx="2.5" ry="4.5" fill="#b8a9cc"/>
-          <ellipse cx="34" cy="50" rx="2" ry="3.5" fill="#b8a9cc" transform="rotate(-15 34 50)"/>
-          <ellipse cx="46" cy="48" rx="2" ry="3.5" fill="#b8a9cc" transform="rotate(15 46 48)"/>
-        </g>
+      <svg viewBox="0 0 60 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 220 Q 35 140 28 30" stroke="#9d8eb5" stroke-width="0.8" stroke-linecap="round"/>
+        <!-- Hastes finas e pétalas sutis de lavanda -->
+        <ellipse cx="28" cy="25" rx="1.8" ry="3.8" fill="#a495bc" opacity="0.8"/>
+        <ellipse cx="25" cy="38" rx="1.6" ry="3.2" fill="#b3a5c9" opacity="0.75" transform="rotate(-15 25 38)"/>
+        <ellipse cx="32" cy="46" rx="1.6" ry="3.2" fill="#b3a5c9" opacity="0.75" transform="rotate(15 32 46)"/>
+        <ellipse cx="24" cy="62" rx="1.8" ry="3.5" fill="#a495bc" opacity="0.8" transform="rotate(-20 24 62)"/>
+        <ellipse cx="33" cy="72" rx="1.8" ry="3.5" fill="#a495bc" opacity="0.8" transform="rotate(20 33 72)"/>
+        <ellipse cx="23" cy="90" rx="2" ry="4" fill="#8f7fa7" opacity="0.85" transform="rotate(-25 23 90)"/>
+        <ellipse cx="34" cy="102" rx="2" ry="4" fill="#8f7fa7" opacity="0.85" transform="rotate(25 34 102)"/>
+        <ellipse cx="22" cy="122" rx="2" ry="4.2" fill="#9d8eb5" opacity="0.8" transform="rotate(-30 22 122)"/>
+        <ellipse cx="35" cy="135" rx="2" ry="4.2" fill="#9d8eb5" opacity="0.8" transform="rotate(30 35 135)"/>
+        <!-- Folhas finas na base -->
+        <path d="M31 160 Q 15 150 10 145" stroke="#92a884" stroke-width="0.7" opacity="0.7"/>
+        <path d="M30 175 Q 48 165 52 160" stroke="#92a884" stroke-width="0.7" opacity="0.7"/>
       </svg>
     </div>
 
     <div class="botanical-right">
-      <svg viewBox="0 0 80 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g opacity="0.7">
-          <line x1="40" y1="280" x2="40" y2="40" stroke="#9d8eb5" stroke-width="1.2"/>
-          <ellipse cx="40" cy="38" rx="3" ry="5" fill="#b8a9cc"/>
-          <line x1="40" y1="220" x2="62" y2="190" stroke="#9d8eb5" stroke-width="1"/>
-          <ellipse cx="66" cy="186" rx="2.5" ry="4.5" fill="#c9bcd8" transform="rotate(20 66 186)"/>
-          <ellipse cx="70" cy="178" rx="2" ry="3.5" fill="#c9bcd8" transform="rotate(25 70 178)"/>
-          <ellipse cx="73" cy="170" rx="1.8" ry="3" fill="#c9bcd8" transform="rotate(30 73 170)"/>
-          <line x1="40" y1="200" x2="18" y2="170" stroke="#9d8eb5" stroke-width="1"/>
-          <ellipse cx="15" cy="166" rx="2.5" ry="4.5" fill="#c9bcd8" transform="rotate(-20 15 166)"/>
-          <ellipse cx="11" cy="158" rx="2" ry="3.5" fill="#c9bcd8" transform="rotate(-25 11 158)"/>
-          <line x1="40" y1="160" x2="65" y2="128" stroke="#9d8eb5" stroke-width="1"/>
-          <ellipse cx="69" cy="124" rx="2.5" ry="4.5" fill="#b8a9cc" transform="rotate(20 69 124)"/>
-          <ellipse cx="73" cy="116" rx="2" ry="3.5" fill="#b8a9cc" transform="rotate(25 73 116)"/>
-          <ellipse cx="76" cy="108" rx="1.8" ry="3" fill="#b8a9cc" transform="rotate(30 76 108)"/>
-          <line x1="40" y1="130" x2="15" y2="100" stroke="#9d8eb5" stroke-width="1"/>
-          <ellipse cx="12" cy="96" rx="2.5" ry="4.5" fill="#b8a9cc" transform="rotate(-20 12 96)"/>
-          <ellipse cx="8" cy="88" rx="2" ry="3.5" fill="#b8a9cc" transform="rotate(-25 8 88)"/>
-          <ellipse cx="40" cy="80" rx="2.5" ry="4.5" fill="#9d8eb5" transform="rotate(10 40 80)"/>
-          <ellipse cx="45" cy="70" rx="2" ry="4" fill="#9d8eb5" transform="rotate(20 45 70)"/>
-          <ellipse cx="35" cy="65" rx="2" ry="4" fill="#9d8eb5" transform="rotate(-15 35 65)"/>
-          <ellipse cx="40" cy="58" rx="2.5" ry="4.5" fill="#b8a9cc"/>
-          <ellipse cx="46" cy="50" rx="2" ry="3.5" fill="#b8a9cc" transform="rotate(15 46 50)"/>
-          <ellipse cx="34" cy="48" rx="2" ry="3.5" fill="#b8a9cc" transform="rotate(-15 34 48)"/>
-        </g>
+      <svg viewBox="0 0 60 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 220 Q 35 140 28 30" stroke="#9d8eb5" stroke-width="0.8" stroke-linecap="round"/>
+        <ellipse cx="28" cy="25" rx="1.8" ry="3.8" fill="#a495bc" opacity="0.8"/>
+        <ellipse cx="25" cy="38" rx="1.6" ry="3.2" fill="#b3a5c9" opacity="0.75" transform="rotate(-15 25 38)"/>
+        <ellipse cx="32" cy="46" rx="1.6" ry="3.2" fill="#b3a5c9" opacity="0.75" transform="rotate(15 32 46)"/>
+        <ellipse cx="24" cy="62" rx="1.8" ry="3.5" fill="#a495bc" opacity="0.8" transform="rotate(-20 24 62)"/>
+        <ellipse cx="33" cy="72" rx="1.8" ry="3.5" fill="#a495bc" opacity="0.8" transform="rotate(20 33 72)"/>
+        <ellipse cx="23" cy="90" rx="2" ry="4" fill="#8f7fa7" opacity="0.85" transform="rotate(-25 23 90)"/>
+        <ellipse cx="34" cy="102" rx="2" ry="4" fill="#8f7fa7" opacity="0.85" transform="rotate(25 34 102)"/>
+        <ellipse cx="22" cy="122" rx="2" ry="4.2" fill="#9d8eb5" opacity="0.8" transform="rotate(-30 22 122)"/>
+        <ellipse cx="35" cy="135" rx="2" ry="4.2" fill="#9d8eb5" opacity="0.8" transform="rotate(30 35 135)"/>
+        <path d="M31 160 Q 15 150 10 145" stroke="#92a884" stroke-width="0.7" opacity="0.7"/>
+        <path d="M30 175 Q 48 165 52 160" stroke="#92a884" stroke-width="0.7" opacity="0.7"/>
       </svg>
     </div>
 
-    <div class="hero-content">
-      <!-- Watercolor house painting -->
-      <div class="hero-painting-wrapper reveal">
-        <img src="assets/images/planodefundo.jpeg" alt="Casa do casamento" class="hero-painting">
-      </div>
+    <!-- Imagem de plano de fundo ampliada para pegar toda a largura -->
+    <div class="hero-painting-wrapper reveal">
+      <img src="assets/images/planodefundo_casal.png" alt="Aquarela do Casamento Jiúlia e Vinícius" class="hero-painting">
+    </div>
 
-      <!-- Couple name -->
+    <div class="hero-content">
+      <!-- Nomes do casal -->
       <h1 class="couple-name reveal">Jiúlia e Vinícius</h1>
 
-      <!-- Date -->
+      <!-- Data do casamento -->
       <p class="couple-date reveal">08 DE OUTUBRO DE 2027</p>
 
-      <!-- Decorative divider -->
+      <!-- Divisor sutil e elegante -->
       <div class="lavender-divider reveal">
         <svg viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="0" y1="10" x2="80" y2="10" stroke="#9d8eb5" stroke-width="0.8" opacity="0.5"/>
-          <circle cx="100" cy="10" r="3" fill="#9d8eb5" opacity="0.6"/>
-          <circle cx="90" cy="10" r="2" fill="#9d8eb5" opacity="0.4"/>
-          <circle cx="110" cy="10" r="2" fill="#9d8eb5" opacity="0.4"/>
-          <line x1="120" y1="10" x2="200" y2="10" stroke="#9d8eb5" stroke-width="0.8" opacity="0.5"/>
+          <line x1="0" y1="10" x2="80" y2="10" stroke="#9d8eb5" stroke-width="0.7" opacity="0.5"/>
+          <circle cx="100" cy="10" r="2.5" fill="#9d8eb5" opacity="0.7"/>
+          <circle cx="91" cy="10" r="1.8" fill="#9d8eb5" opacity="0.45"/>
+          <circle cx="109" cy="10" r="1.8" fill="#9d8eb5" opacity="0.45"/>
+          <line x1="120" y1="10" x2="200" y2="10" stroke="#9d8eb5" stroke-width="0.7" opacity="0.5"/>
         </svg>
       </div>
     </div>
   </section>
 
-  <!-- ========== COUNTDOWN ========== -->
-  <section class="countdown-section reveal">
+  <!-- ========== COUNTDOWN (REATIVO COM VUE.JS) ========== -->
+  <section class="countdown-section reveal" id="countdown-app">
     <div class="countdown-grid">
       <div class="countdown-item">
-        <span id="home-dias" class="cd-number">631</span>
+        <span class="cd-number">{{ days }}</span>
         <span class="cd-label">DIAS</span>
       </div>
       <div class="cd-dot">◆</div>
       <div class="countdown-item">
-        <span id="home-horas" class="cd-number">20</span>
+        <span class="cd-number">{{ hours }}</span>
         <span class="cd-label">HORAS</span>
       </div>
       <div class="cd-dot">◆</div>
       <div class="countdown-item">
-        <span id="home-minutos" class="cd-number">42</span>
+        <span class="cd-number">{{ minutes }}</span>
         <span class="cd-label">MINUTOS</span>
       </div>
       <div class="cd-dot">◆</div>
       <div class="countdown-item">
-        <span id="home-segundos" class="cd-number">36</span>
+        <span class="cd-number">{{ seconds }}</span>
         <span class="cd-label">SEGUNDOS</span>
       </div>
     </div>
   </section>
 
-  <!-- ========== QUOTE + COUPLE PHOTO ========== -->
+  <!-- ========== CITAÇÃO BÍBLICA (SEM FOTO DO CASAL) ========== -->
   <section class="quote-section reveal" id="info">
-    <div class="quote-photo-wrapper">
-      <img src="assets/images/fotocasal.png" alt="Jiúlia e Vinícius" class="couple-photo">
-    </div>
     <div class="quote-text-wrapper">
       <p class="bible-quote">
         "O amor é paciente, é bondoso, o amor não procura seus próprios interesses, não se ira. Tudo sofre, tudo crê, tudo espera. O amor jamais acaba."
       </p>
       <p class="bible-ref">1 CORÍNTIOS 13, 4-8.</p>
-      <div class="lavender-divider">
+      <div class="lavender-divider" style="margin-top: 10px;">
         <svg viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="0" y1="10" x2="80" y2="10" stroke="#9d8eb5" stroke-width="0.8" opacity="0.5"/>
-          <circle cx="100" cy="10" r="3" fill="#9d8eb5" opacity="0.6"/>
-          <circle cx="90" cy="10" r="2" fill="#9d8eb5" opacity="0.4"/>
-          <circle cx="110" cy="10" r="2" fill="#9d8eb5" opacity="0.4"/>
-          <line x1="120" y1="10" x2="200" y2="10" stroke="#9d8eb5" stroke-width="0.8" opacity="0.5"/>
+          <line x1="0" y1="10" x2="80" y2="10" stroke="#9d8eb5" stroke-width="0.7" opacity="0.5"/>
+          <circle cx="100" cy="10" r="2.5" fill="#9d8eb5" opacity="0.7"/>
+          <circle cx="91" cy="10" r="1.8" fill="#9d8eb5" opacity="0.45"/>
+          <circle cx="109" cy="10" r="1.8" fill="#9d8eb5" opacity="0.45"/>
+          <line x1="120" y1="10" x2="200" y2="10" stroke="#9d8eb5" stroke-width="0.7" opacity="0.5"/>
         </svg>
       </div>
     </div>
   </section>
 
-  <!-- ========== INFO CARDS ========== -->
+  <!-- ========== INFO CARDS (ÍCONES MINIMALISTAS E REFINADOS) ========== -->
   <section class="info-cards-section reveal">
     <!-- Cerimônia -->
     <div class="info-card">
       <div class="info-icon">
         <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="20" y="35" width="20" height="35" fill="none" stroke="#9d8eb5" stroke-width="1.2"/>
-          <path d="M10 35 L30 10 L50 35" fill="none" stroke="#9d8eb5" stroke-width="1.2"/>
-          <line x1="30" y1="10" x2="30" y2="0" stroke="#9d8eb5" stroke-width="1.2"/>
-          <circle cx="30" cy="0" r="2" fill="#9d8eb5"/>
-          <rect x="25" y="48" width="10" height="22" fill="none" stroke="#9d8eb5" stroke-width="1"/>
-          <rect x="15" y="38" width="8" height="10" fill="none" stroke="#9d8eb5" stroke-width="0.8"/>
-          <rect x="37" y="38" width="8" height="10" fill="none" stroke="#9d8eb5" stroke-width="0.8"/>
+          <!-- Capela minimalista delicada -->
+          <line x1="30" y1="2" x2="30" y2="10" stroke="#9d8eb5" stroke-width="0.9" stroke-linecap="round"/>
+          <line x1="26" y1="5" x2="34" y2="5" stroke="#9d8eb5" stroke-width="0.9" stroke-linecap="round"/>
+          <path d="M12 36 L30 18 L48 36" stroke="#9d8eb5" stroke-width="0.9" stroke-linejoin="round"/>
+          <rect x="18" y="36" width="24" height="30" stroke="#9d8eb5" stroke-width="0.9"/>
+          <path d="M25 66 V 48 C 25 45 35 45 35 48 V 66" stroke="#9d8eb5" stroke-width="0.8"/>
+          <circle cx="30" cy="29" r="2.5" stroke="#9d8eb5" stroke-width="0.8"/>
+          <!-- Raminhos sutis -->
+          <path d="M8 60 Q 6 48 10 40" stroke="#9d8eb5" stroke-width="0.6" opacity="0.6"/>
+          <path d="M52 60 Q 54 48 50 40" stroke="#9d8eb5" stroke-width="0.6" opacity="0.6"/>
         </svg>
       </div>
       <h3 class="info-card-title">CERIMÔNIA</h3>
@@ -197,12 +172,16 @@
     <div class="info-card">
       <div class="info-icon">
         <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="5" y="30" width="50" height="40" fill="none" stroke="#9d8eb5" stroke-width="1.2"/>
-          <path d="M5 30 L30 8 L55 30" fill="none" stroke="#9d8eb5" stroke-width="1.2"/>
-          <rect x="18" y="42" width="10" height="28" fill="none" stroke="#9d8eb5" stroke-width="1"/>
-          <rect x="32" y="42" width="10" height="28" fill="none" stroke="#9d8eb5" stroke-width="1"/>
-          <rect x="10" y="33" width="10" height="10" fill="none" stroke="#9d8eb5" stroke-width="0.8"/>
-          <rect x="40" y="33" width="10" height="10" fill="none" stroke="#9d8eb5" stroke-width="0.8"/>
+          <!-- Fachada arquitetônica Casa Lucca -->
+          <path d="M6 32 L30 14 L54 32" stroke="#9d8eb5" stroke-width="0.9" stroke-linejoin="round"/>
+          <rect x="10" y="32" width="40" height="34" stroke="#9d8eb5" stroke-width="0.9"/>
+          <!-- Colunata frontal -->
+          <line x1="16" y1="36" x2="16" y2="66" stroke="#9d8eb5" stroke-width="0.75"/>
+          <line x1="24" y1="36" x2="24" y2="66" stroke="#9d8eb5" stroke-width="0.75"/>
+          <line x1="36" y1="36" x2="36" y2="66" stroke="#9d8eb5" stroke-width="0.75"/>
+          <line x1="44" y1="36" x2="44" y2="66" stroke="#9d8eb5" stroke-width="0.75"/>
+          <!-- Porta central -->
+          <rect x="27" y="44" width="6" height="22" stroke="#9d8eb5" stroke-width="0.8"/>
         </svg>
       </div>
       <h3 class="info-card-title">RECEPÇÃO</h3>
@@ -216,9 +195,13 @@
     <div class="info-card">
       <div class="info-icon">
         <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 5 C20 5 15 12 10 15 L5 20 L15 28 L15 65 L45 65 L45 28 L55 20 L50 15 C45 12 40 5 40 5" fill="none" stroke="#9d8eb5" stroke-width="1.2"/>
-          <path d="M20 5 L30 18 L40 5" fill="none" stroke="#9d8eb5" stroke-width="1.2"/>
-          <circle cx="30" cy="5" r="5" fill="none" stroke="#9d8eb5" stroke-width="1"/>
+          <!-- Cabide minimalista e silhueta elegante -->
+          <circle cx="30" cy="12" r="4" stroke="#9d8eb5" stroke-width="0.85"/>
+          <path d="M12 28 C 12 28 22 22 30 22 C 38 22 48 28 48 28" stroke="#9d8eb5" stroke-width="0.9" stroke-linecap="round"/>
+          <line x1="30" y1="16" x2="30" y2="22" stroke="#9d8eb5" stroke-width="0.85"/>
+          <!-- Silhueta estilizada -->
+          <path d="M22 28 L 20 64 L 40 64 L 38 28" stroke="#9d8eb5" stroke-width="0.75" stroke-linejoin="round"/>
+          <path d="M26 38 L 30 44 L 34 38" stroke="#9d8eb5" stroke-width="0.75"/>
         </svg>
       </div>
       <h3 class="info-card-title">TRAJE</h3>
@@ -229,23 +212,25 @@
         <span class="color-dot" style="background:#7a7060;"></span>
         <span class="color-dot" style="background:#9d8eb5;"></span>
       </div>
-      <p class="info-card-addr" style="font-size:0.75rem; margin-top: 8px;">EVITE AS CORES BRANCA<br>E LAVANDA CLARO</p>
+      <p class="info-card-addr" style="font-size:0.8rem; margin-top: 8px;">EVITE AS CORES BRANCA<br>E LAVANDA CLARO</p>
     </div>
 
     <!-- Presentes -->
     <div class="info-card">
       <div class="info-icon">
         <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="8" y="28" width="44" height="42" fill="none" stroke="#9d8eb5" stroke-width="1.2"/>
-          <rect x="5" y="18" width="50" height="12" fill="none" stroke="#9d8eb5" stroke-width="1.2"/>
-          <line x1="30" y1="18" x2="30" y2="70" stroke="#9d8eb5" stroke-width="1"/>
-          <path d="M30 18 C30 18 20 14 20 8 C20 4 24 2 27 5 C29 7 30 10 30 18 Z" fill="none" stroke="#9d8eb5" stroke-width="1"/>
-          <path d="M30 18 C30 18 40 14 40 8 C40 4 36 2 33 5 C31 7 30 10 30 18 Z" fill="none" stroke="#9d8eb5" stroke-width="1"/>
+          <!-- Caixa de presente minimalista com laço delicado -->
+          <rect x="12" y="28" width="36" height="36" stroke="#9d8eb5" stroke-width="0.9"/>
+          <rect x="9" y="21" width="42" height="7" stroke="#9d8eb5" stroke-width="0.9"/>
+          <line x1="30" y1="21" x2="30" y2="64" stroke="#9d8eb5" stroke-width="0.8"/>
+          <!-- Laço superior -->
+          <path d="M30 21 C 28 14 18 10 20 6 C 24 3 28 10 30 21 Z" stroke="#9d8eb5" stroke-width="0.8"/>
+          <path d="M30 21 C 32 14 42 10 40 6 C 36 3 32 10 30 21 Z" stroke="#9d8eb5" stroke-width="0.8"/>
         </svg>
       </div>
       <h3 class="info-card-title">PRESENTES</h3>
       <p class="info-card-addr">O melhor presente é<br>sua presença!</p>
-      <p class="info-card-addr" style="margin-top: 8px; font-size: 0.78rem;">Lista de presentes disponível<br>na aba ao lado.</p>
+      <p class="info-card-addr" style="margin-top: 8px; font-size: 0.82rem;">Lista de presentes virtual<br>disponível abaixo.</p>
     </div>
   </section>
 
@@ -254,11 +239,11 @@
     <div class="section-lavender-header">
       <div class="lavender-divider">
         <svg viewBox="0 0 300 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="0" y1="10" x2="120" y2="10" stroke="#9d8eb5" stroke-width="0.8" opacity="0.5"/>
-          <circle cx="150" cy="10" r="3" fill="#9d8eb5" opacity="0.6"/>
-          <circle cx="138" cy="10" r="2" fill="#9d8eb5" opacity="0.4"/>
-          <circle cx="162" cy="10" r="2" fill="#9d8eb5" opacity="0.4"/>
-          <line x1="180" y1="10" x2="300" y2="10" stroke="#9d8eb5" stroke-width="0.8" opacity="0.5"/>
+          <line x1="0" y1="10" x2="120" y2="10" stroke="#9d8eb5" stroke-width="0.7" opacity="0.5"/>
+          <circle cx="150" cy="10" r="2.5" fill="#9d8eb5" opacity="0.7"/>
+          <circle cx="138" cy="10" r="1.8" fill="#9d8eb5" opacity="0.45"/>
+          <circle cx="162" cy="10" r="1.8" fill="#9d8eb5" opacity="0.45"/>
+          <line x1="180" y1="10" x2="300" y2="10" stroke="#9d8eb5" stroke-width="0.7" opacity="0.5"/>
         </svg>
       </div>
       <h2 class="section-title-lavender">Confirme sua Presença</h2>
@@ -286,16 +271,16 @@
     </div>
   </section>
 
-  <!-- ========== LISTA DE PRESENTES ========== -->
+  <!-- ========== LISTA DE PRESENTES (16 ITENS COMPLETOS) ========== -->
   <section class="section-container reveal" id="lista-presentes">
     <div class="section-lavender-header">
       <div class="lavender-divider">
         <svg viewBox="0 0 300 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="0" y1="10" x2="120" y2="10" stroke="#9d8eb5" stroke-width="0.8" opacity="0.5"/>
-          <circle cx="150" cy="10" r="3" fill="#9d8eb5" opacity="0.6"/>
-          <circle cx="138" cy="10" r="2" fill="#9d8eb5" opacity="0.4"/>
-          <circle cx="162" cy="10" r="2" fill="#9d8eb5" opacity="0.4"/>
-          <line x1="180" y1="10" x2="300" y2="10" stroke="#9d8eb5" stroke-width="0.8" opacity="0.5"/>
+          <line x1="0" y1="10" x2="120" y2="10" stroke="#9d8eb5" stroke-width="0.7" opacity="0.5"/>
+          <circle cx="150" cy="10" r="2.5" fill="#9d8eb5" opacity="0.7"/>
+          <circle cx="138" cy="10" r="1.8" fill="#9d8eb5" opacity="0.45"/>
+          <circle cx="162" cy="10" r="1.8" fill="#9d8eb5" opacity="0.45"/>
+          <line x1="180" y1="10" x2="300" y2="10" stroke="#9d8eb5" stroke-width="0.7" opacity="0.5"/>
         </svg>
       </div>
       <h2 class="section-title-lavender">Lista de Presentes</h2>
@@ -303,7 +288,7 @@
     </div>
 
     <div class="presentes-grid">
-      <!-- Gift Item 1: Cafeteira -->
+      <!-- 1: Cafeteira 110v -->
       <div class="presente-card reveal">
         <div class="presente-img-wrapper">
           <img src="assets/images/cafeteira.jpg" alt="Cafeteira 110v">
@@ -313,7 +298,7 @@
         <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Cafeteira 110v')">COMPRAR</button>
       </div>
 
-      <!-- Gift Item 2: Liquidificador -->
+      <!-- 2: Liquidificador 1,25L -->
       <div class="presente-card reveal">
         <div class="presente-img-wrapper">
           <img src="assets/images/liquidificador.jpeg" alt="Liquidificador 1,25L">
@@ -323,7 +308,7 @@
         <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Liquidificador 1,25L')">COMPRAR</button>
       </div>
 
-      <!-- Gift Item 3: Jogo de Panelas -->
+      <!-- 3: Jogo de Panelas Antiaderente -->
       <div class="presente-card reveal">
         <div class="presente-img-wrapper">
           <img src="assets/images/panelas.jpg" alt="Jogo de Panelas Antiaderente">
@@ -333,14 +318,134 @@
         <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Jogo de Panelas Antiaderente')">COMPRAR</button>
       </div>
 
-      <!-- Gift Item 4: Jogo de Lençol -->
+      <!-- 4: Jogo de Lençol, 600 fios King Size -->
       <div class="presente-card reveal">
         <div class="presente-img-wrapper">
           <img src="assets/images/lencol.jpg" alt="Jogo de Lençol, 600 fios King Size">
         </div>
         <h3 class="presente-name">Jogo de Lençol, 600 fios King Size</h3>
         <div class="presente-price">R$ 195,00</div>
-        <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Jogo de Lençol')">COMPRAR</button>
+        <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Jogo de Lençol 600 fios')">COMPRAR</button>
+      </div>
+
+      <!-- 5: Jogo de toalhas 100% Algodão Egípcio -->
+      <div class="presente-card reveal">
+        <div class="presente-img-wrapper">
+          <img src="assets/images/toalhas.jpeg" alt="Jogo de toalhas 100% Algodão Egípcio">
+        </div>
+        <h3 class="presente-name">Jogo de toalhas 100% Algodão Egípcio</h3>
+        <div class="presente-price">R$ 325,00</div>
+        <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Jogo de toalhas Algodão Egípcio')">COMPRAR</button>
+      </div>
+
+      <!-- 6: Geladeira Frost Free Enverse 447L -->
+      <div class="presente-card reveal">
+        <div class="presente-img-wrapper">
+          <img src="assets/images/geladeira.jpeg" alt="Geladeira Frost Free Enverse 447L">
+        </div>
+        <h3 class="presente-name">Geladeira Frost Free Enverse 447L</h3>
+        <div class="presente-price">R$ 4.300,00</div>
+        <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Geladeira Frost Free 447L')">COMPRAR</button>
+      </div>
+
+      <!-- 7: Cooktop 5 bocas a gás -->
+      <div class="presente-card reveal">
+        <div class="presente-img-wrapper">
+          <img src="assets/images/fogão.jpeg" alt="Cooktop 5 bocas a gás">
+        </div>
+        <h3 class="presente-name">Cooktop 5 bocas a gás</h3>
+        <div class="presente-price">R$ 925,00</div>
+        <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Cooktop 5 bocas a gás')">COMPRAR</button>
+      </div>
+
+      <!-- 8: Sofá retrátil em linho -->
+      <div class="presente-card reveal">
+        <div class="presente-img-wrapper">
+          <img src="assets/images/sofá.jpeg" alt="Sofá retrátil em linho">
+        </div>
+        <h3 class="presente-name">Sofá retrátil em linho</h3>
+        <div class="presente-price">R$ 6.300,00</div>
+        <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Sofá retrátil em linho')">COMPRAR</button>
+      </div>
+
+      <!-- 9: Micro-ondas 1200W 110V -->
+      <div class="presente-card reveal">
+        <div class="presente-img-wrapper">
+          <img src="assets/images/microondas.jpeg" alt="Micro-ondas 1200W 110V">
+        </div>
+        <h3 class="presente-name">Micro-ondas 1200W 110V</h3>
+        <div class="presente-price">R$ 620,00</div>
+        <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Micro-ondas 1200W 110V')">COMPRAR</button>
+      </div>
+
+      <!-- 10: Conjunto de facas profissional -->
+      <div class="presente-card reveal">
+        <div class="presente-img-wrapper">
+          <img src="assets/images/conjuntoFacas.jpeg" alt="Conjunto de facas profissional">
+        </div>
+        <h3 class="presente-name">Conjunto de facas profissional</h3>
+        <div class="presente-price">R$ 210,00</div>
+        <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Conjunto de facas profissional')">COMPRAR</button>
+      </div>
+
+      <!-- 11: Botijão de gás com casco -->
+      <div class="presente-card reveal">
+        <div class="presente-img-wrapper">
+          <img src="assets/images/botijao.jpeg" alt="Botijão de gás com casco">
+        </div>
+        <h3 class="presente-name">Botijão de gás com casco</h3>
+        <div class="presente-price">R$ 250,00</div>
+        <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Botijão de gás com casco')">COMPRAR</button>
+      </div>
+
+      <!-- 12: Smart TV 58 polegadas UHD LED -->
+      <div class="presente-card reveal">
+        <div class="presente-img-wrapper">
+          <img src="assets/images/televisao.jpeg" alt="Smart TV 58 polegadas UHD LED">
+        </div>
+        <h3 class="presente-name">Smart TV 58 polegadas UHD LED</h3>
+        <div class="presente-price">R$ 2.850,00</div>
+        <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Smart TV 58 polegadas UHD')">COMPRAR</button>
+      </div>
+
+      <!-- 13: Caixa de som bluetooth -->
+      <div class="presente-card reveal">
+        <div class="presente-img-wrapper">
+          <img src="assets/images/caixaSom.jpeg" alt="Caixa de som bluetooth">
+        </div>
+        <h3 class="presente-name">Caixa de som bluetooth</h3>
+        <div class="presente-price">R$ 435,00</div>
+        <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Caixa de som bluetooth')">COMPRAR</button>
+      </div>
+
+      <!-- 14: Kit churrasco 17 peças -->
+      <div class="presente-card reveal">
+        <div class="presente-img-wrapper">
+          <img src="assets/images/kitChurrasco.jpeg" alt="Kit churrasco 17 peças">
+        </div>
+        <h3 class="presente-name">Kit churrasco 17 peças</h3>
+        <div class="presente-price">R$ 1.410,00</div>
+        <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Kit churrasco 17 peças')">COMPRAR</button>
+      </div>
+
+      <!-- 15: Fritadeira Elétrica sem óleo -->
+      <div class="presente-card reveal">
+        <div class="presente-img-wrapper">
+          <img src="assets/images/fritadeira.jpeg" alt="Fritadeira Elétrica sem óleo">
+        </div>
+        <h3 class="presente-name">Fritadeira Elétrica sem óleo</h3>
+        <div class="presente-price">R$ 265,00</div>
+        <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Fritadeira Elétrica sem óleo')">COMPRAR</button>
+      </div>
+
+      <!-- 16: Purificador de água com painel digital -->
+      <div class="presente-card reveal">
+        <div class="presente-img-wrapper">
+          <img src="assets/images/purificador.jpeg" alt="Purificador de água com painel digital">
+        </div>
+        <h3 class="presente-name">Purificador de água com painel digital</h3>
+        <div class="presente-price">R$ 780,00</div>
+        <button class="btn-comprar" onclick="copyPixKey('juh.marrafon@gmail.com', 'Purificador de água digital')">COMPRAR</button>
       </div>
     </div>
   </section>
@@ -370,7 +475,7 @@
   <div id="pix-modal" class="pix-modal" style="display:none;">
     <div class="pix-modal-box">
       <button class="pix-modal-close" onclick="document.getElementById('pix-modal').style.display='none'">✕</button>
-      <h3 class="pix-modal-title" id="pix-modal-title">Chave PIX copiada!</h3>
+      <h3 class="pix-modal-title" id="pix-modal-title">PRESENTE</h3>
       <p class="pix-modal-key" id="pix-modal-key">juh.marrafon@gmail.com</p>
       <p class="pix-modal-info">Chave PIX copiada para sua área de transferência.<br>Abra o app do seu banco e cole a chave para fazer o pagamento.</p>
     </div>
