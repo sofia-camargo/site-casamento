@@ -25,7 +25,7 @@
         <span class="monogram-sep">|</span>
         <span class="monogram-v">V</span>
       </div>
-      <img src="assets/images/divider_garland.jpeg" alt="Raminhos" class="monogram-garland-img">
+      <img src="assets/images/divider_garland.jpg" alt="Raminhos" class="monogram-garland-img">
     </div>
     <div class="nav-right">
       <a href="#confirmar-presenca" class="nav-link">CONFIRME SUA PRESENÇA</a>
