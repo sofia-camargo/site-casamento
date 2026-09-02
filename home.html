@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jiúlia & Vinícius — 08 de Outubro de 2027</title>
-  <meta name="description" content="Site de casamento de Jiúlia e Vinícius. Confirme sua presença e celebre conosco dia 08 de Outubro de 2027.">
+  <title>Maria & João — 08 de Outubro de 2027</title>
+  <meta name="description" content="Site de casamento de Maria e João. Confirme sua presença e celebre conosco dia 08 de Outubro de 2027.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -14,6 +14,10 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 </head>
 <body id="top">
+  <!-- ÁUDIO DE FUNDO (TRANSPARENTE / OCULTO COM AUTOPLAY) -->
+  <audio id="bg-audio" loop preload="auto" style="display: none;">
+    <source src="assets/audio/audio_CanonInD.mp3" type="audio/mpeg">
+  </audio>
 
   <!-- ========== NAV (RESPONSIVA: NO CELULAR LOGO EM CIMA, MENU EMBAIXO) ========== -->
   <nav class="main-nav" id="main-nav">
@@ -23,11 +27,11 @@
     </div>
     <div class="nav-monogram">
       <div class="monogram-text">
-        <span class="monogram-j">J</span>
+        <span class="monogram-j">M</span>
         <span class="monogram-sep">|</span>
-        <span class="monogram-v">V</span>
+        <span class="monogram-v">J</span>
       </div>
-      <img src="assets/images/divider_garland.jpg" alt="Raminhos de Lavanda" class="monogram-garland-img">
+      <img src="assets/images/divider_garland.png" alt="Raminhos de Lavanda" class="monogram-garland-img">
     </div>
     <div class="nav-right">
       <a href="#confirmar-presenca" class="nav-link">CONFIRME SUA PRESENÇA</a>
@@ -76,12 +80,12 @@
 
     <!-- Imagem de plano de fundo ampliada para pegar toda a largura -->
     <div class="hero-painting-wrapper reveal">
-      <img src="assets/images/planodefundo_casal.png" alt="Aquarela do Casamento Jiúlia e Vinícius" class="hero-painting">
+      <img src="assets/images/planodefundo_casal.png" alt="Aquarela do Casamento Maria e João" class="hero-painting">
     </div>
 
     <div class="hero-content">
       <!-- Nomes do casal -->
-      <h1 class="couple-name reveal">Jiúlia e Vinícius</h1>
+      <h1 class="couple-name reveal">Maria e João</h1>
 
       <!-- Data do casamento -->
       <p class="couple-date reveal">08 DE OUTUBRO DE 2027</p>
@@ -162,10 +166,10 @@
         </svg>
       </div>
       <h3 class="info-card-title">CERIMÔNIA</h3>
-      <p class="info-card-venue">CAPELA MONTE ALEGRE</p>
-      <p class="info-card-addr">Av. Comendador Pedro Morganti, s/n<br>Monte Alegre, Piracicaba – SP</p>
+      <p class="info-card-venue">CAPELA SANTA MARIA</p>
+      <p class="info-card-addr">Av. Paulista, 1578<br>Bela Vista, São Paulo – SP</p>
       <p class="info-card-time">16h30</p>
-      <a href="https://www.google.com.br/maps/place/Av.+Comendador+Pedro+Morganti+-+Piracicaba,+SP/@-22.7042103,-47.6108704,17z/data=!3m1!4b1!4m6!3m5!1s0x94c62e3ce14d5e05:0x295ecf386cfb3835!8m2!3d-22.7042153!4d-47.6082955!16s%2Fg%2F11b6_6jntt?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn-map-link">COMO CHEGAR</a>
+      <a href="https://www.google.com/maps/place/Museu+de+Arte+de+S%C3%A3o+Paulo+Assis+Chateaubriand/@-23.5630129,-46.6524541,15.8z/data=!4m15!1m8!3m7!1s0x94ce59ba138e71d9:0x368cd321cbb46d00!2sR.+Treze+de+Maio+-+Bela+Vista,+S%C3%A3o+Paulo+-+SP,+04849-529!3b1!8m2!3d-23.5629232!4d-46.6456871!16s%2Fg%2F1ymswyjdl!3m5!1s0x94ce59ceb1eb771f:0xe904f6a669744da1!8m2!3d-23.561414!4d-46.6558819!16zL20vMDJfazR2?entry=ttu&g_ep=EgoyMDI2MDgzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn-map-link">COMO CHEGAR</a>
     </div>
 
     <!-- Recepção -->
@@ -185,8 +189,8 @@
         </svg>
       </div>
       <h3 class="info-card-title">RECEPÇÃO</h3>
-      <p class="info-card-venue">CASA LUCCA</p>
-      <p class="info-card-addr">Praça Antônio Keller, 22<br>Monte Alegre, Piracicaba – SP</p>
+      <p class="info-card-venue">CASA DAS ROSAS</p>
+      <p class="info-card-addr">Av. Paulista, 37<br>Bela Vista, São Paulo – SP</p>
       <p class="info-card-time">18h00</p>
       <a href="https://www.google.com.br/maps/place/Praca+Antonio+Keller,+22+-+Monte+Alegre,+Piracicaba+-+SP,+13415-020/@-22.7041203,-47.5940447,17z/data=!3m1!4b1!4m6!3m5!1s0x94c62e3c1ff67615:0xd51f460b9f42432e!8m2!3d-22.7041253!4d-47.5914698!16s%2Fg%2F11f_j07m1q?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn-map-link">COMO CHEGAR</a>
     </div>
@@ -206,13 +210,7 @@
       </div>
       <h3 class="info-card-title">TRAJE</h3>
       <p class="info-card-venue">ESPORTE FINO</p>
-      <div class="color-palette">
-        <span class="color-dot" style="background:#c8bfb0;"></span>
-        <span class="color-dot" style="background:#a89e90;"></span>
-        <span class="color-dot" style="background:#7a7060;"></span>
-        <span class="color-dot" style="background:#9d8eb5;"></span>
-      </div>
-      <p class="info-card-addr" style="font-size:0.8rem; margin-top: 8px;">EVITE AS CORES BRANCA<br>E LAVANDA CLARO</p>
+      <p class="info-card-addr" style="font-size:0.8rem; margin-top: 8px;">EVITE AS CORES BRANCA<br>E LAVANDA.</p>
     </div>
 
     <!-- Presentes -->
@@ -229,7 +227,7 @@
         </svg>
       </div>
       <h3 class="info-card-title">PRESENTES</h3>
-      <p class="info-card-addr">O melhor presente é<br>sua presença!</p>
+      <h5 class="info-card-venue">O melhor presente é<br>sua presença!</h5>
       <p class="info-card-addr" style="margin-top: 8px; font-size: 0.82rem;">Lista de presentes virtual<br>disponível abaixo.</p>
     </div>
   </section>

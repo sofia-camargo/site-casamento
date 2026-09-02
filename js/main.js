@@ -5,6 +5,32 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ========== BACKGROUND AUDIO (AUTOPLAY & INTERACTION FALLBACK) ==========
+  const audio = document.getElementById('bg-audio');
+  if (audio) {
+    // Tenta tocar imediatamente ao carregar
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Se o navegador bloquear o autoplay sem interação prévia,
+        // inicia automaticamente no primeiro toque, clique, rolagem ou tecla do usuário
+        const startAudio = () => {
+          audio.play().then(() => {
+            ['click', 'touchstart', 'scroll', 'keydown', 'pointerdown'].forEach(evt => {
+              window.removeEventListener(evt, startAudio);
+              document.removeEventListener(evt, startAudio);
+            });
+          }).catch(() => {});
+        };
+
+        ['click', 'touchstart', 'scroll', 'keydown', 'pointerdown'].forEach(evt => {
+          window.addEventListener(evt, startAudio, { once: true, passive: true });
+          document.addEventListener(evt, startAudio, { once: true, passive: true });
+        });
+      });
+    }
+  }
+
   // ========== VUE.JS COUNTDOWN ==========
   if (window.Vue && document.getElementById('countdown-app')) {
     const { createApp, ref, onMounted, onUnmounted } = Vue;
@@ -87,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
           fetch(googleScriptUrl, {
             method: 'POST',
             mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
             body: JSON.stringify(payload)
           }).catch(err => console.log('Google Script fetch note:', err));
         }

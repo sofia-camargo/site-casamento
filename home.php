@@ -14,6 +14,10 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 </head>
 <body id="top">
+  <!-- ÁUDIO DE FUNDO (TRANSPARENTE / OCULTO COM AUTOPLAY) -->
+  <audio id="bg-audio" loop preload="auto" style="display: none;">
+    <source src="assets/audio/audio_CanonInD.mp3" type="audio/mpeg">
+  </audio>
 
   <!-- ========== NAV (RESPONSIVA: NO CELULAR LOGO EM CIMA, MENU EMBAIXO) ========== -->
   <nav class="main-nav" id="main-nav">

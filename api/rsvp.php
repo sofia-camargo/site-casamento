@@ -55,6 +55,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         curl_close($ch);
     }
 
+    // Envio de notificação por E-mail para a noiva (Backup PHP)
+    $toEmail = 'juh-marrafon-dellariva@hotmail.com';
+    $statusEmoji = $presenca === 'Confirmada' ? '✅' : '❌';
+    $subject = "=?UTF-8?B?" . base64_encode("{$statusEmoji} Confirmação de Presença: {$nome} ({$presenca})") . "?=";
+    $emailBody = "Nova resposta registrada no site de casamento Jiúlia & Vinícius:\n\n"
+               . "Convidado(a): {$nome}\n"
+               . "Telefone: {$telefone}\n"
+               . "Presença: {$presenca}\n"
+               . "Data/Hora: " . date('d/m/Y H:i');
+    $headers = "From: Casamento Jiúlia e Vinícius <no-reply@" . ($_SERVER['HTTP_HOST'] ?? 'casamento.local') . ">\r\n"
+             . "Content-Type: text/plain; charset=UTF-8\r\n";
+    @mail($toEmail, $subject, $emailBody, $headers);
+
     $msg = $presenca === 'Confirmada' ? 'Presença confirmada com sucesso!' : 'Sua resposta foi registrada. Sentiremos sua falta!';
     echo json_encode(['success' => true, 'message' => $msg]);
     exit;
