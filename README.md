@@ -1,4 +1,4 @@
-<h1 align="center">💍 Site de Casamento</h1>
+<h1 align="center"> Site de Casamento💍</h1>
 
 Site desenvolvido para celebrar o casamento de João e Maria, reunindo todas as informações importantes para os convidados em um só lugar: confirmação de presença, contagem regressiva, lista de presentes e localização do evento.
 
